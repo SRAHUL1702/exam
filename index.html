@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script type="text/javascript">
+function saveEdits() {
+var editElem = document.getElementById("edit");
+var userVersion = editElem.innerHTML;
+localStorage.userEdits = userVersion;
+document.getElementById("update").innerHTML="Edits saved!";
+}
+function checkEdits() {
+if(localStorage.userEdits!=null)
+document.getElementById("edit").innerHTML = localStorage.userEdits;
+}
+</script>
 </head>
 <body onload="checkEdits()" bgcolor="#ffff99" align="center" style="font-family:verdana;">
 <h1 style="color : red ;">update exam schedule here</h1>
